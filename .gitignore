@@ -1,0 +1,11 @@
+.venv*/
+__pycache__/
+.pytest_cache/
+data/
+outputs/
+.env
+notebooks/executed.ipynb
+
+# Written to the repository root by optional retraining (TRAIN = True)
+hf_home/
+/yolo11n.pt

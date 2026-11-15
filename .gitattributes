@@ -1,0 +1,12 @@
+# Keep hashed artifacts byte-identical across Windows and Linux checkouts.
+docs/competition/official_code/self_evaluation.ipynb -text
+src/**/*.py -text
+scripts/*.py -text
+scripts/*.sh text eol=lf
+# Final weights: binary, never line-ending converted; rescorer params keep LF so their bytes are stable.
+weights/*.pt binary
+weights/*.json -text
+# Shipped validation predictions: keep bytes stable (their SHA is quoted in docs).
+docs/report/val_predictions/*.json -text
+# Vendored upstream code: keep the upstream bytes, so third_party/ameyypawar-filament-seg.sha256 checks on every OS.
+third_party/** -text

@@ -1,0 +1,73 @@
+{
+ "pool": "A6",
+ "detectors": [
+  "cp_s43",
+  "m1280",
+  "m1024",
+  "det4",
+  "d1024",
+  "d1536"
+ ],
+ "unet": "cpstrong_s0",
+ "features": [
+  "score",
+  "members",
+  "log_area",
+  "support",
+  "mean_prob",
+  "radius"
+ ],
+ "scaler_mean": [
+  0.49609504850285846,
+  5.987093153759821,
+  7.141924128780434,
+  0.6995053257467426,
+  0.9199290034343218,
+  0.5704839943903626
+ ],
+ "scaler_scale": [
+  0.19187958788137396,
+  0.12241294241887732,
+  0.8867675567022898,
+  0.19353539655238358,
+  0.040422390133389885,
+  0.20355056558905382
+ ],
+ "coef": [
+  1.1276068084145165,
+  0.11135592748690677,
+  0.053237136077104584,
+  0.18057525211961428,
+  0.37480598541144056,
+  -0.09335039424699272
+ ],
+ "intercept": 0.7218889779094085,
+ "e_iou_by_bin": [
+  0.6732910198147316,
+  0.6802607128349948,
+  0.702367188163147
+ ],
+ "area_bins": [
+  800,
+  3200
+ ],
+ "pq_train": 0.46233436488978374,
+ "threshold": 0.23116718244489187,
+ "candidate_min_score": 0.15,
+ "rule": "keep iff sigmoid(coef . (x - mean) / scale + intercept) * e_iou[bin(area)] > threshold",
+ "fit": {
+  "model": "sklearn LogisticRegression(C=1, lbfgs, max_iter=1000) on StandardScaler features, one row per (candidate, annotator record), target = hit at IoU > .5",
+  "pairs": 1782,
+  "pair_hit_rate": 0.6307519640852974,
+  "val_images": 141,
+  "val_fused_s030_pq": 0.46233436488978374,
+  "val_insample_rescored_pq_not_a_score": 0.46733793193758966,
+  "report": "outputs/amey_A6_cpstrong_s0_submission_20261104/report.json",
+  "report_csv_sha256": "dbb78137bd01398f8a0b8a78c55e7cab752b9941773e94147962f8fdfef1069e"
+ },
+ "provenance": {
+  "instances_json": "outputs/refiner_20261031/amey_20261104/A6/instances_val_s0.json",
+  "instances_sha256": "2cb318e508e99c80c7147712dab7576ec362537b82142d45c104ac1e4eaa10f7",
+  "candidates": 1105
+ }
+}

@@ -1,0 +1,30 @@
+# Pinned environment of the submitted pipeline (notebooks/final_inference.ipynb), Python 3.11.
+# The clean-machine run of 2026-11-12 installed these same pins (from a file then named requirements-model.txt).
+#
+#   python -m venv .venv-final
+#   .venv-final/bin/python -m pip install -r requirements.txt        # Linux
+#   .\.venv-final\Scripts\python.exe -m pip install -r requirements.txt   # Windows
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+numpy==2.0.0
+opencv-python==4.11.0.86
+opencv-python-headless==4.11.0.86
+pycocotools==2.0.10
+segmentation-models-pytorch==0.5.0
+timm==1.0.29
+albumentations==2.0.8
+huggingface_hub==1.9.2
+safetensors==0.7.0
+ultralytics==8.3.221
+scikit-learn==1.7.2
+scipy==1.14.0
+pandas==2.3.3
+pillow==10.4.0
+tqdm==4.67.1
+# notebook execution
+ipykernel==7.0.1
+jupyter_client==8.6.3
+nbformat==5.10.4
+nbconvert==7.17.1
+nbclient==0.10.4

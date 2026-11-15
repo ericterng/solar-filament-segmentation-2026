@@ -1,0 +1,70 @@
+{
+ "pool": "r43",
+ "detectors": [
+  "cp_s43",
+  "m1280",
+  "m1024"
+ ],
+ "unet": "cpstrong_s0",
+ "features": [
+  "score",
+  "members",
+  "log_area",
+  "support",
+  "mean_prob",
+  "radius"
+ ],
+ "scaler_mean": [
+  0.4910454805661384,
+  2.997834325933947,
+  7.1176518178639165,
+  0.699851960786195,
+  0.9189570250377826,
+  0.5719372713814932
+ ],
+ "scaler_scale": [
+  0.18937520972037591,
+  0.04648638426348783,
+  0.8721307406985959,
+  0.1951699139597397,
+  0.04157100420381766,
+  0.20350391622597988
+ ],
+ "coef": [
+  1.1168606436636774,
+  0.010904618756534055,
+  0.009413588410438215,
+  0.24304036138881233,
+  0.3427109664930647,
+  -0.12910967497217404
+ ],
+ "intercept": 0.6174232720459226,
+ "e_iou_by_bin": [
+  0.6710032857890371,
+  0.6808384902204959,
+  0.7018096804964981
+ ],
+ "area_bins": [
+  800,
+  3200
+ ],
+ "pq_train": 0.4572629431575,
+ "threshold": 0.22863147157875,
+ "candidate_min_score": 0.15,
+ "rule": "keep iff sigmoid(coef . (x - mean) / scale + intercept) * e_iou[bin(area)] > threshold",
+ "fit": {
+  "model": "sklearn LogisticRegression(C=1, lbfgs, max_iter=1000) on StandardScaler features, one row per (candidate, annotator record), target = hit at IoU > .5",
+  "pairs": 1847,
+  "pair_hit_rate": 0.6128857606930157,
+  "val_images": 141,
+  "val_fused_s030_pq": 0.4572629431575,
+  "val_insample_rescored_pq_not_a_score": 0.4641771177439556,
+  "report": "outputs/combo_cpstrong_s0_cp43_submission_20261026/report.json",
+  "report_csv_sha256": "305d06c679d134d7c5133f00817d3e70b1a8d108678b1610a149692970b4bbb2"
+ },
+ "provenance": {
+  "instances_json": "outputs/refiner_20261031/instances_val_s0.json",
+  "instances_sha256": "057b0dd8fe58f7564cc5d1987d80d04a4056faed818e6c380363831ebd18c1ce",
+  "candidates": 1144
+ }
+}
